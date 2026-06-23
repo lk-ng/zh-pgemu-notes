@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>竞彩导航 · 赛事信息与服务指引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+            background: #f6f2eb;   /* 米白基调 */
+            color: #2c2a28;
+            line-height: 1.7;
+            padding: 0 1.25rem 3rem;
+        }
+
+        .page-wrap {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #fcfaf7;
+            padding: 1.8rem 2.2rem 3rem;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+            border-radius: 28px;
+            margin-top: 1.6rem;
+        }
+
+        /* 顶部导航 —— 轻量、文章式 */
+        .top-nav {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #e4ddd4;
+            margin-bottom: 2rem;
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 480;
+            letter-spacing: 0.02em;
+            color: #3f3b36;
+        }
+
+        .site-title a {
+            color: #3f3b36;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border 0.15s;
+        }
+        .site-title a:hover {
+            border-bottom-color: #b8a999;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.6rem;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            color: #5d554b;
+            text-decoration: none;
+            padding: 0.25rem 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.15s;
+        }
+        .nav-links a:hover {
+            border-bottom-color: #b8a999;
+            color: #2c2721;
+        }
+
+        /* hero 区域 —— 温和引入，不做大标题强推 */
+        .hero-tone {
+            margin: 1.8rem 0 2.4rem;
+            padding: 1.2rem 1.8rem;
+            background: #f3ede6;
+            border-left: 6px solid #c6b5a3;
+            border-radius: 0 18px 18px 0;
+        }
+
+        .hero-tone p {
+            font-size: 1.12rem;
+            color: #3d3730;
+        }
+
+        .hero-tone strong {
+            font-weight: 520;
+        }
+
+        /* 核心介绍段落 */
+        .intro-block {
+            margin-bottom: 2.8rem;
+        }
+
+        .intro-block p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .intro-block a {
+            color: #6f5e4d;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #ccbcab;
+        }
+        .intro-block a:hover {
+            color: #3a2f27;
+            text-decoration-color: #8f7b66;
+        }
+
+        .inset-quote {
+            background: #f2ece4;
+            padding: 0.9rem 1.6rem;
+            margin: 1.5rem 0;
+            border-radius: 20px;
+            font-style: normal;
+            border: 1px solid #e3d9cf;
+            color: #3e3832;
+            box-shadow: inset 0 0 0 1px rgba(255,250,240,0.5);
+        }
+
+        .inset-quote::before {
+            content: "📌 ";
+            font-size: 1.05rem;
+        }
+
+        /* 三个场景卡片 */
+        .scene-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 2.8rem 0 2rem;
+        }
+
+        .scene-card {
+            flex: 1 1 200px;
+            background: #f7f2ea;
+            border-radius: 24px;
+            padding: 1.5rem 1.2rem 1.6rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.02);
+            transition: 0.2s;
+            border: 1px solid #e7ddd2;
+        }
+
+        .scene-card:hover {
+            background: #f4ede4;
+            border-color: #d3c5b6;
+            transform: translateY(-2px);
+        }
+
+        .scene-card h3 {
+            font-size: 1.2rem;
+            font-weight: 450;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .scene-card p {
+            font-size: 0.95rem;
+            color: #49433c;
+            line-height: 1.6;
+        }
+
+        /* 常见说明区域（简洁FAQ风格） */
+        .faq-mini {
+            margin-top: 2.2rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e4dbd0;
+        }
+
+        .faq-mini h2 {
+            font-weight: 430;
+            font-size: 1.25rem;
+            letter-spacing: 0.3px;
+            margin-bottom: 1rem;
+            color: #3d3730;
+        }
+
+        .faq-item {
+            padding: 0.8rem 0 0.6rem 0;
+            border-bottom: 1px dashed #e1d7cb;
+        }
+
+        .faq-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            display: inline-block;
+            font-weight: 520;
+            color: #5c5146;
+            margin-bottom: 0.1rem;
+        }
+
+        .faq-item p {
+            margin-top: 0.2rem;
+            color: #4e4841;
+            font-size: 0.96rem;
+        }
+
+        /* 底部 footnote */
+        .foot-note {
+            margin-top: 2.8rem;
+            font-size: 0.88rem;
+            color: #7b7266;
+            text-align: center;
+            border-top: 1px solid #e7dfd5;
+            padding-top: 1.4rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .page-wrap {
+                padding: 1.2rem 1rem 2rem;
+                border-radius: 20px;
+                margin-top: 0.8rem;
+            }
+            .top-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+            }
+            .nav-links {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                margin-top: 0.2rem;
+            }
+            .hero-tone {
+                padding: 0.8rem 1.2rem;
+                margin: 1rem 0 1.8rem;
+            }
+            .scene-grid {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+            .scene-card {
+                flex: 1 1 auto;
+            }
+        }
+
+        @media (max-width: 400px) {
+            body {
+                padding: 0 0.8rem 2rem;
+            }
+            .page-wrap {
+                padding: 1rem 0.8rem 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <!-- 导航 -->
+    <nav class="top-nav">
+        <span class="site-title">
+            <a href="https://sporttery-wap.com">竞彩网</a>
+        </span>
+        <div class="nav-links">
+            <a href="#">赛事参考</a>
+            <a href="#">数据对照</a>
+            <a href="#">玩法说明</a>
+        </div>
+    </nav>
+
+    <!-- 温和导语 -->
+    <div class="hero-tone">
+        <p><strong>日常信息查询 · 对照 · 延伸阅读</strong><br>
+        从一场比赛的赔率变化到联赛的数据整理，<a href="https://sporttery-wap.com">竞彩网</a>提供相对完整的赛事信息与资讯页面，适合作为快速查阅的起点。</p>
+    </div>
+
+    <!-- 核心介绍段落 -->
+    <div class="intro-block">
+        <p>很多时候，我们只是需要快速了解某场焦点战的让球数据，或者对比几支球队的近况、得失球与历史交锋。一个清晰、稳定的信息页面能省去反复搜索的时间。在移动端浏览时，排版节奏、文字可读性和跳转便利性同样重要。</p>
+        <p>正因如此，越来越多喜欢自己分析比赛的朋友，会把 <a href="https://sporttery-wap.com">竞彩网</a> 收藏在浏览器书签或设为常用。它呈现的赛程、赔付区间以及联赛覆盖范围，可以作为独立判断的参考之一，而不是唯一来源。保持交叉核对，结合球队新闻和伤停动态，往往能获得更立体的理解。</p>
+
+        <div class="inset-quote">
+            查询时留意数据更新时间，不同平台之间的微小差异属于正常现象。养成对照两到三个来源的习惯，有助于减少信息盲区。
+        </div>
+
+        <p>除了直接查看固定场次，也可以利用站内检索或分类标签快速筛选联赛。对于习惯做笔记或手动记录的朋友，简洁的页面结构更适合复制粘贴关键数值，放进自己的表格或文档中。</p>
+    </div>
+
+    <!-- 三个场景卡片 -->
+    <div class="scene-grid">
+        <div class="scene-card">
+            <h3>📋 赛前数据对照</h3>
+            <p>选定一场比赛后，同时打开几个页面横向对比赔付区间与走势。用<a href="https://sporttery-wap.com">竞彩网</a>作为基础参考，再配合其他情报站验证，逐渐形成自己的对照流程。</p>
+        </div>
+        <div class="scene-card">
+            <h3>📆 周末联赛快速浏览</h3>
+            <p>周五到周日晚间赛事密集，通过分类列表一眼扫过让球数值与场次时间。适合赛前快速筛选出值得进一步研究的两三场对决。</p>
+        </div>
+        <div class="scene-card">
+            <h3>📚 延伸阅读与笔记整理</h3>
+            <p>一些联赛的长期数据趋势值得记录。把关键场次的指数变化截图或摘录下来，配合赛后复盘，慢慢积累属于自己的参考档案。</p>
+        </div>
+    </div>
+
+    <!-- 常见说明 / FAQ 摘要 -->
+    <div class="faq-mini">
+        <h2>常见说明 · 几点补充</h2>
+        <div class="faq-item">
+            <strong>数据更新时间</strong>
+            <p>页面数据通常跟随官方信息流定时刷新，但极端情况下可能出现数分钟延迟。建议关注赛前一到两小时内的最新变动。</p>
+        </div>
+        <div class="faq-item">
+            <strong>联赛覆盖范围</strong>
+            <p>主要涵盖国内联赛、亚洲赛事以及欧洲主流联赛。部分小联赛或杯赛的场次可能未完全收录，请以具体列表为准。</p>
+        </div>
+        <div class="faq-item">
+            <strong>关于移动端浏览</strong>
+            <p>站点针对手机屏幕做了基本适配，横竖屏均可正常阅读。如果需要更宽的数据视野，可以尝试切换横屏或使用平板设备。</p>
+        </div>
+        <div class="faq-item">
+            <strong>理性参考建议</strong>
+            <p>任何数据平台都只是工具，比赛本身存在诸多变数。请结合球队状态、伤病、天气等综合信息，理性看待指数波动。</p>
+        </div>
+    </div>
+
+    <!-- 收尾 -->
+    <div class="foot-note">
+        <span>— 日常查询、对照与延伸阅读 · 温和参考 —</span>
+    </div>
+</div>
+</body>
+</html>
